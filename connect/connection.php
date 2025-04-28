@@ -1,10 +1,8 @@
-<?php 
-
+<?php  
 $dbServername = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
-$dbName = "loginsystem";
-
+$dbName = "loginsystem"; 
 $connect = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName);
 
 /*
@@ -13,4 +11,5 @@ if ($mysqli -> connect_error) {
   echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
   exit();
 }*/
+
 ?>

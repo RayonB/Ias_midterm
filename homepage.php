@@ -98,8 +98,7 @@ if (!isset($_SESSION['email'])) {
             <h5 class="card-title">Top Artists</h5>
             <p class="card-text">Your most listened artists this week.</p>
         </div>
-    </div>
-</div>
-
-</body>
+     </div>
+  </div>
+ </body>
 </html>
