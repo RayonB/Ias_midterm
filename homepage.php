@@ -166,6 +166,7 @@ const downloadFile = document.getElementById("downloadFile");
 
 // Initialize playlist (will reset every refresh)
 let playlist = [];
+let currentSongIndex = -1; // Initialize the current song index
 
 // Add file to playlist
 downloadBtn.addEventListener("click", () => {
@@ -216,6 +217,7 @@ function displayPlaylist() {
 
 // Play a song
 function playSong(index) {
+    currentSongIndex = index; // Set the current song index
     const song = playlist[index];
     audioPlayer.src = song.data;
     audioPlayer.currentTime = 0;
@@ -228,7 +230,8 @@ function playSong(index) {
 // Play next song when ended
 audioPlayer.addEventListener('ended', () => {
     if (playlist.length > 0) {
-        playSong((playlist.indexOf(audioPlayer.src) + 1) % playlist.length);
+        currentSongIndex = (currentSongIndex + 1) % playlist.length; // Move to the next song
+        playSong(currentSongIndex); // Play the next song
     }
 });
 
@@ -236,6 +239,15 @@ audioPlayer.addEventListener('ended', () => {
 function deleteSong(index) {
     playlist.splice(index, 1);
     displayPlaylist();
+    audioPlayer.pause();  // Pause the player when a song is deleted
+    audioPlayer.currentTime = 0;  // Reset the player to the start
+    if (index === currentSongIndex) {
+        // If the deleted song is currently playing, play the next one
+        currentSongIndex = (currentSongIndex + 1) % playlist.length;
+        if (playlist.length > 0) {
+            playSong(currentSongIndex);
+        }
+    }
 }
 </script>
 
