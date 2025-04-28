@@ -7,8 +7,8 @@ if (isset($_POST["login"])) {
     $password = trim($_POST['password']);
 
     $sql = mysqli_query($connect, "SELECT * FROM login WHERE email = '$email'");
-    $count = mysqli_num_rows($sql);
-
+    $count = mysqli_num_rows($sql); 
+    
     if ($count > 0) {
         $fetch = mysqli_fetch_assoc($sql);
         $hashpassword = $fetch["password"];
@@ -25,8 +25,7 @@ if (isset($_POST["login"])) {
     }
 }
 ?>
-
-
+ 
 <!doctype html>
 <html lang="en">
 <head>

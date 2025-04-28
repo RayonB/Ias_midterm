@@ -106,14 +106,14 @@
             $mail->SMTPSecure='tls';
 
             // h-hotel account
-            $mail->Username='harvey.datoy21@gmail.com';
-            $mail->Password='VincentRoyCamba04122001';
+            $mail->Username='rinevarayon@gmail.com';
+            $mail->Password='pxrg unlk jesm hble';
 
             // send by h-hotel email
-            $mail->setFrom('harvey.datoy21@gmail.com', 'Password Reset');
+            $mail->setFrom('rinevarayon@gmail.com', 'Password Reset');
             // get email from input
             $mail->addAddress($_POST["email"]);
-            //$mail->addReplyTo('lamkaizhe16@gmail.com');
+            //$mail->addReplyTo('rayonivanree@gmail.com');
 
             // HTML body
             $mail->isHTML(true);
@@ -121,7 +121,7 @@
             $mail->Body="<b>Dear User</b>
             <h3>We received a request to reset your password.</h3>
             <p>Kindly click the below link to reset your password</p>
-            http://localhost/login-System/Login-System-main/reset_psw.php
+            http://localhost/loginsystem/loginsystem-main/reset_psw.php
             <br><br>
             <p>With regrads,</p>
             <b>Programming with Lam</b>";
@@ -141,6 +141,4 @@
             }
         }
     }
-
-
-?>
+?> 

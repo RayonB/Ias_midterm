@@ -53,10 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["register"])) {
                         $mail->Port       = 587;
                         $mail->SMTPAuth   = true;
                         $mail->SMTPSecure = 'tls';
-                        $mail->Username   = 'harvey.datoy21@gmail.com';
-                        $mail->Password   = 'nwhn mukd qduj ukpl';
+                        $mail->Username   = 'rinevarayon@gmail.com';
+                        $mail->Password   = 'pxrg unlk jesm hble';
 
-                        $mail->setFrom('harvey.datoy21@gmail.com', 'OTP Verification');
+                        $mail->setFrom('rinevarayon@gmail.com', 'OTP Verification');
                         $mail->addAddress($email);
                         $mail->isHTML(true);
                         $mail->Subject = "Your verification code";
